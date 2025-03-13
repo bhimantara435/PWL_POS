@@ -12,10 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('t_penjualan_detail', function (Blueprint $table) {
-            $table->id('level_id');
-            $table->string('level_kode', 10)->unique();
-            $table->string('level_nama', 100);
+            $table->id('detail_id');
+            $table->unsignedBigInteger('penjualan_id');
+            $table->unsignedBigInteger('barang_id');
+            $table->integer('harga');
+            $table->integer('jumlah');
             $table->timestamps();
+
+            $table->foreign('penjualan_id')->references('penjualan_id')->on('t_penjualan')->onDelete('cascade');
+            $table->foreign('barang_id')->references('barang_id')->on('m_barang')->onDelete('cascade');
         });
     }
 
