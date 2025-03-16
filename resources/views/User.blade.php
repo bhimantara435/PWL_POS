@@ -6,17 +6,13 @@
     <title>Data User</title>
     <style>
         table {
-            width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            width: 200px;
         }
         th, td {
             border: 1px solid black;
             padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
+            text-align: center;
         }
     </style>
 </head>
@@ -24,18 +20,11 @@
     <h1>Data User</h1>
     <table>
         <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Nama</th>
-            <th>ID Level Pengguna</th>
+            <th>Jumlah Pengguna</th>
         </tr>
         <tr>
-
-            <td>{{ $data->user_id }}</td>
-            <td>{{ $data->username }}</td>
-            <td>{{ $data->nama }}</td>
-            <td>{{ $data->level_id }}</td>
-            </tr>
+            <td>{{ $data }}</td>
+        </tr>
     </table>
 </body>
 </html>
