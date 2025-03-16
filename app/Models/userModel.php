@@ -11,5 +11,7 @@ class UserModel extends Model
 
     protected $table = 'm_user'; // Nama tabel di database
     protected $primaryKey = 'user_id'; // Primary key tabel
-    public $timestamps = false; // Matikan timestamps jika tidak digunakan
+
+
+    protected $fillable = ['level_id', 'username', 'nama'];
 }

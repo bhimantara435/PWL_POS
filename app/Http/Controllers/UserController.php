@@ -4,23 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\UserModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     public function index()
     {
-        // Data yang akan diupdate
-        $data = [
-            'nama' => 'Pelanggan Pertama'
-        ];
-
-        // Update data user dengan username 'customer-1'
-        UserModel::where('username', 'customer-1')->update($data);
-
-        // Ambil semua data dari tabel m_user
-        $user = UserModel::all();
-
-        // Tampilkan ke view
+        
+        $user = UserModel::findOr(20, ['username', 'nama'], function() {
+            abort(404);
+        });
         return view('user', ['data' => $user]);
     }
 }
