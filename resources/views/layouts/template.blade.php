@@ -20,7 +20,7 @@
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
-        @include('layout.header')
+        @include('layouts.header')
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
@@ -34,7 +34,7 @@
 
 
             <!-- Sidebar -->
-            @include('layout.sidebar')
+            @include('layouts.sidebar')
             <!-- /.sidebar -->
         </aside>
 
@@ -52,7 +52,7 @@
         </div>
         <!-- /.content-wrapper -->
 
-        @include('layout.footer')
+        @include('layouts.footer')
     </div>
     <!-- ./wrapper -->
 
